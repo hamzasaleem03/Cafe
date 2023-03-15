@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Furniture Store</title>
+    <style>
+      /* CSS code for styling the website */
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      nav {
+        background-color: #ccc;
+        padding: 10px;
+        text-align: center;
+      }
+      
+      section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 10px;
+      }
+      
+      article {
+        background-color: #eee;
+        border: 1px solid #ccc;
+        margin: 10px;
+        padding: 10px;
+        width: 300px;
+      }
+      
+      h2 {
+        font-size: 1.2em;
+        margin: 0;
+      }
+      
+      p {
+        font-size: 1em;
+        margin: 0;
+      }
+      
+      img {
+        max-width: 100%;
+      }
+      
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>5-Star Furniture</h1>
+    </header>
+    
+    <!-- <nav>
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Contact</a>
+    </nav>
+    
+    <section>
+      <article>
+        <h2>Chair</h2>
+        <img src="chair.jpg" alt="Chair">
+        <p>$50</p>
+      </article>
+      
+      <article>
+        <h2>Sofa</h2>
+        <img src="sofa.jpg" alt="Sofa">
+        <p>$300</p>
+      </article>
+      
+      <article>
+        <h2>Table</h2>
+        <img src="table.jpg" alt="Table">
+        <p>$100</p>
+      </article>
+    </section>
+    
+    <footer>
+      <p>&copy; 2023 Furniture Store</p>
+    </footer> -->
+    <nav>
+      <a href="./home.html">Home</a>
+      <a href="./example.html">Products</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+      
+      <section>
+        <article>
+          <h2>Chair</h2>
+          <img src="https://i0.wp.com/www.kfrooms.com/wp-content/uploads/2021/10/GetPhotoSigned-4.jpeg?resize=800%2C800&ssl=1" alt="Chair">
+          <p>$50</p>
+          <button onclick="addToCart('Chair', 50)">Add to cart</button>
+        </article>
+        
+        <article>
+          <h2>Sofa</h2>
+          <img src="https://i0.wp.com/www.kfrooms.com/wp-content/uploads/2021/08/valour-leather-sofa-2EEI-3765-TAN.jpg?resize=802%2C800&ssl=1" alt="Sofa">
+          <p>$300</p>
+          <button onclick="addToCart('Sofa', 300)">Add to cart</button>
+        </article>
+        
+        <article>
+          <h2>Table</h2>
+          <img src="https://i0.wp.com/www.kfrooms.com/wp-content/uploads/2021/10/GetPhotoSigned-8.jpeg?resize=926%2C800&ssl=1" alt="Table">
+          <p>$100</p>
+          <button onclick="addToCart('Table', 100)">Add to cart</button>
+        </article>
+      </section>
+      
+      <div id="cart">
+        <h3>Shopping Cart</h3>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+        <button onclick="clearCart()">Clear cart</button>
+      </div>
+      
+      <footer>
+        <p>&copy; 2023 5-Star Furniture</p>
+      </footer>
+      <script>
+        // JavaScript code for shopping cart functionality
+        let cartItems = [];
+        let cartTotal = 0;
+        const cartItemsElement = document.getElementById('cart-items');
+        const cartTotalElement = document.getElementById('cart-total');
+        
+        function addToCart(name, price) {
+          cartItems.push({ name, price });
+          cartTotal += price;
+          updateCart();
+        }
+        
+        function clearCart() {
+          cartItems = [];
+          cartTotal = 0;
+          updateCart();
+        }
+        
+        function updateCart() {
+          // Clear cart items element
+          cartItemsElement.innerHTML = '';
+          
+          // Add each item to the cart items element
+          for (let item of cartItems) {
+            const li = document.createElement('li');
+            li.innerText = `${item.name} - $${item.price}`;
+            cartItemsElement.appendChild(li);
+          }
+          
+          // Update cart total element
+          cartTotalElement.innerText
+        }
+</script>            
+  </body>
+</html>
